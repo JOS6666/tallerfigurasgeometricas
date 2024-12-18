@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Evaluación N°I</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="center-content ion-padding">
+  <ion-card>
+    <ion-item lines="none">
+      <ion-label class="ion-text-center">
+        <strong>Figura Geométrica</strong>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-select
+        placeholder="Escoja una figura geométrica"
+        [(ngModel)]="figuraSeleccionada"
+      >
+        <ion-select-option value="circulo">Círculo</ion-select-option>
+        <ion-select-option value="triangulo">Triángulo</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+
+  <div *ngIf="figuraSeleccionada === 'circulo'">
+    <app-circulo></app-circulo>
+  </div>
+  <div *ngIf="figuraSeleccionada === 'triangulo'">
+    <app-triangulo></app-triangulo>
+  </div>
+</ion-content>
